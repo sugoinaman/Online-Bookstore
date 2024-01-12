@@ -1,0 +1,7 @@
+web application for an online bookstore.
+Implement features such as
+user authentication,
+book catalog,
+shopping cart,
+and order processing.
+Use Spring Security for authentication and authorization.
