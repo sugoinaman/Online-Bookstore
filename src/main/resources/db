@@ -1,0 +1,42 @@
+-- Create the onlinebookstore database
+create database onlinebookstore;
+
+-- Use the onlinebookstore database
+use onlinebookstore;
+
+-- Create the books table
+create table books(
+    barcode varchar(100) primary key,
+    name varchar(100),
+    author varchar(100),
+    price int,
+    quantity int
+);
+
+-- Create the users table
+create table users(
+    username varchar(100) primary key,
+    password varchar(100),
+    firstname varchar(100),
+    lastname varchar(100),
+    address text,
+    phone varchar(100),
+    mailid varchar(100),
+    usertype int
+);
+
+-- Insert data into the books table using multiple values
+insert into books
+values
+    ('10101', 'Programming in C', 'James k Wick', 500, 5),
+    ('10102', 'Learn Java', 'Scott Mayers', 150, 13),
+    ('10103', 'Database Knowledge', 'Charles Pettzoid', 124, 360),
+    ('10104', 'Let us c++', 'Steve Macclen', 90, 111),
+    ('10105', 'Success Key', 'Shashi Raj', 5000, 15);
+
+-- Insert data into the users table using multiple values
+insert into users
+values
+    ('User', 'Password', 'First', 'User', 'My Home', '42502216225', 'user@gmail.com', 2),
+    ('Admin', 'Admin', 'Mr.', 'Admin', 'Haldia WB', '9584552224521', 'admin@gmail.com', 1);
+

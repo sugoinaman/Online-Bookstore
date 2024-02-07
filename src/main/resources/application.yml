@@ -4,5 +4,7 @@ spring:
       client:
         registration:
           google:
-            client-id: 76537276579-bcjenqo2bf158pd7h1fls5kohv718f55.apps.googleusercontent.com
-            client-secret: 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
+            client-id: 620351269398-daqfinfd134srlcps4pqkhetf1v4lgaj.apps.googleusercontent.com
+            client-secret: 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
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration

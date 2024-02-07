@@ -5,3 +5,27 @@ book catalog,
 shopping cart,
 and order processing.
 Use Spring Security for authentication and authorization.
+
+
+
+http://localhost:8080/login/auth2/code/google
+
+
+
+---
+services:
+  mysql-workbench:
+    image: lscr.io/linuxserver/mysql-workbench:latest
+    container_name: mysql-workbench
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /home/naman/docker/mysql/config:/config
+    ports:
+      - 3000:3000
+      - 3001:3001
+    cap_add:
+      - IPC_LOCK
+    restart: unless-stopped

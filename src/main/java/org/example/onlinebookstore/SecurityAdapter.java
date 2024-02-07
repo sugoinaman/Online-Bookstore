@@ -14,27 +14,29 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 @Configuration
 public class SecurityAdapter {
 
-    @Bean
+     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-
-        http.authorizeHttpRequests(a -> a
-                        .requestMatchers(",", "/error").permitAll()
+        http
+                .authorizeHttpRequests(a -> a
+                        .requestMatchers("/", "/error").permitAll()
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(e -> e
                         .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
+                        // unauthorized request is denied with 401 error
                 )
                 .csrf(c -> c
-                        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()) //random thing for angular
+                                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                        //.withHttpOnlyFalse is to allow javascript requests as well, instead of httponly
                 )
                 .logout(l -> l
-                        .logoutSuccessUrl("/").permitAll()
+                                .logoutSuccessUrl("/").permitAll()
+                        // after a logout users will be able to access "/" and everyone is authorised
+                        // to access that
                 )
-
-                .oauth2Login(
-                        Customizer.withDefaults()
-                ); // to permit login page
-return http.build();
+                .oauth2Login(httpSecurityOAuth2LoginConfigurer -> httpSecurityOAuth2LoginConfigurer
+                        .loginPage("/login")
+                );
+        return http.build();
     }
-
 }
