@@ -3,8 +3,8 @@ spring:
     oauth2:
       client:
         registration:
-          google:
-            client-id: 620351269398-daqfinfd134srlcps4pqkhetf1v4lgaj.apps.googleusercontent.com
-            client-secret: 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
+          github:
+            client-id: Iv1.46d57e99820f95ff
+            client-secret: 44ea83e2c3d3dc8f35076be41ee668ff6d4234bd
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration

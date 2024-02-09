@@ -19,11 +19,14 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     @NotBlank(message="name cannot be empty")
     private String name;
 
     @NotBlank(message= "email cannot be empty")
     private String email;
+
+    @NotBlank(message="phone cannot be empty")
+    private Integer phone;
 }
