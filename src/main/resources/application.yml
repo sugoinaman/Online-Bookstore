@@ -6,5 +6,3 @@ spring:
           github:
             client-id: Iv1.46d57e99820f95ff
             client-secret: 44ea83e2c3d3dc8f35076be41ee668ff6d4234bd
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
