@@ -1,5 +1,6 @@
 package org.example.onlinebookstore.entities;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,13 +16,16 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer userid;
+    private int bookid;
 
-    @NotBlank(message="name cannot be empty")
+    @NotBlank(message="Name cannot be empty, gotta have a name")
     private String name;
+
+    private String author;
+
 
 }
