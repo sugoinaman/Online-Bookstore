@@ -1,15 +1,12 @@
 package org.example.onlinebookstore;
 
 
+import org.example.onlinebookstore.entities.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AnonymousAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UserController {
@@ -17,19 +14,16 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
 
-    @GetMapping("/welcome")
-    public String getUserName(@AuthenticationPrincipal OAuth2User principal, Model model) {
+/*
+    @GetMapping("/")
+    public String getUserName(@AuthenticationPrincipal OAuth2User principal) {
 
         if (isAuthenticated()) {
 
             String name = principal.getAttribute("login");
             User existingUserCheck = userRepository.findByName(name);
-            if (existingUserCheck==null) {
+            if (existingUserCheck == null) {
                 User user = new User();
                 user.setName(name);
                 userRepository.save(user);
@@ -38,8 +32,9 @@ public class UserController {
             model.addAttribute("name", name);
             return "welcome";
         }
-        return "index";
-    }
+        return "login";
+        }
+
 
     public boolean isAuthenticated() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -49,10 +44,13 @@ public class UserController {
         }
         return authentication.isAuthenticated();
     }
+*/
 
-    @GetMapping("/clear")
-    public void clear() {
-        userRepository.deleteAll();
-        System.out.println("DATABASE CLEARED");
+
+    @RequestMapping("/user")
+    public String user(@AuthenticationPrincipal OAuth2User principal) {
+        //System.out.println(principal);
+        return principal.getAttribute("login");
     }
+
 }
