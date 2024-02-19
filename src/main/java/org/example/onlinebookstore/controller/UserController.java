@@ -1,18 +1,26 @@
-package org.example.onlinebookstore;
+package org.example.onlinebookstore.controller;
 
 
 import org.example.onlinebookstore.entities.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.oauth2.core.user.OAuth2User;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @GetMapping("/")
+    public String Welcome(){
+        return "welcome";
+    }
+
+    @GetMapping("/private")
+    private String secretpage() {
+        return "dis a secret page";
+    }
 
 
 /*
@@ -44,13 +52,10 @@ public class UserController {
         }
         return authentication.isAuthenticated();
     }
-*/
-
-
-    @RequestMapping("/user")
+*//*@RequestMapping("/user")
     public String user(@AuthenticationPrincipal OAuth2User principal) {
         //System.out.println(principal);
         return principal.getAttribute("login");
-    }
+    }*/
 
 }
