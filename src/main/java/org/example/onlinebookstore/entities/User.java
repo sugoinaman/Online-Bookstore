@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
-
 @Entity
 @Getter
 @Setter
@@ -23,13 +21,14 @@ public class User {
     @NotBlank(message="name cannot be empty")
     private String name;
 
-    @OneToMany
-    @JoinTable(
-            name="user_cart",
-            joinColumns = @JoinColumn(name="userid"),
-            inverseJoinColumns =@JoinColumn(name="bookid")
-    )
+    private int age;
 
-    private ArrayList<Book> cart;
+    private String address;
+
+    @OneToOne
+    @JoinColumn(name="cartid",referencedColumnName = "cartid")
+    private Cart cart;
+
+
 
 }

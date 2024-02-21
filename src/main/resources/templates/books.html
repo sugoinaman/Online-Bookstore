@@ -16,11 +16,13 @@
         <th>BookID</th>
         <th>Book name</th>
         <th>Author</th>
+        <th>Price</th>
     </tr>
     <tr th:each="book : ${books}">
         <td th:text="${book.bookid}"></td>
         <td th:text="${book.name}"></td>
         <td th:text="${book.author}"></td>
+        <td th:text="${book.price}"></td>
         <td><button type="button"> Select</button></td>
     </tr>
 </table>

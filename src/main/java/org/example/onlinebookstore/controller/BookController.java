@@ -13,10 +13,7 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
 
-    @GetMapping("/")
-    public String Welcome() {
-        return "welcome";
-    }
+
 
     @GetMapping("/books")
     public String getBooks(Model model) {

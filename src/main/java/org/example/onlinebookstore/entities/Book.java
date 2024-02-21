@@ -17,7 +17,7 @@ import lombok.Setter;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int bookid;
 
     @NotBlank(message="Name cannot be empty, gotta have a name")
@@ -25,5 +25,6 @@ public class Book {
 
     private String author;
 
+    private int price;
 
 }

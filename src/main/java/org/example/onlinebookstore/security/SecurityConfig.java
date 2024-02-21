@@ -16,7 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Bean
+   @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(a -> a
@@ -28,14 +28,16 @@ public class SecurityConfig {
                 )
                 .build();
     }
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return new InMemoryUserDetailsManager(
-                User.builder()
-                        .username("user")
-                        .password("{noop}password")
-                        .authorities("ROLE_user")
-                        .build()
-        );
-    }
+
+
+@Bean
+public UserDetailsService userDetailsService() {
+    return new InMemoryUserDetailsManager(
+            User.builder()
+                    .username("user")
+                    .password("{noop}password")
+                    .authorities("ROLE_user")
+                    .build()
+    );
+}
 }
