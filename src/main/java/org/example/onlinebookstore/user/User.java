@@ -1,4 +1,4 @@
-package org.example.onlinebookstore.entities;
+package org.example.onlinebookstore.user;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.example.onlinebookstore.cart.Cart;
 
 @Entity
 @Getter

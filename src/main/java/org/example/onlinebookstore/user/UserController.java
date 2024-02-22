@@ -1,5 +1,8 @@
-package org.example.onlinebookstore.controller;
+package org.example.onlinebookstore.user;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
@@ -7,6 +10,9 @@ import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
 public class UserController {
+
+    @Autowired
+    UserRepository userRepository;
     /*
     @GetMapping("/")
     public String getUserName(@AuthenticationPrincipal OAuth2User principal) {
@@ -42,7 +48,14 @@ public class UserController {
         return principal.getAttribute("login");
     }*/
     @GetMapping("/")
-    public RedirectView welcome() {
+    public RedirectView welcome(@AuthenticationPrincipal OAuth2User principal) {
+        User user=new User();
+        user.setUserid(principal.getAttribute("id"));
         return new RedirectView("/books");
     }
+
+    public String returnUserId(@AuthenticationPrincipal OAuth2User principal) {
+        return principal.getAttribute("id");
+    }
+
 }

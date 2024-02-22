@@ -1,10 +1,20 @@
-package org.example.onlinebookstore.entities;
+package org.example.onlinebookstore.cart;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.example.onlinebookstore.book.Book;
+import org.example.onlinebookstore.user.User;
 
 import java.util.ArrayList;
 
+@AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 public class Cart {
 
@@ -12,7 +22,6 @@ public class Cart {
     private int cartid;
 
     private int totalPrice;
-
 
 
     //for the user table
@@ -37,6 +46,7 @@ public class Cart {
             inverseJoinColumns = @JoinColumn(name = "bookid")
     )
     private ArrayList<Book> books;
+
 
 
 }

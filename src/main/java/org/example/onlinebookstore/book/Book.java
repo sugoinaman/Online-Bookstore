@@ -1,4 +1,4 @@
-package org.example.onlinebookstore.entities;
+package org.example.onlinebookstore.book;
 
 
 import jakarta.persistence.*;
@@ -26,5 +26,7 @@ public class Book {
     private String author;
 
     private int price;
+
+
 
 }
