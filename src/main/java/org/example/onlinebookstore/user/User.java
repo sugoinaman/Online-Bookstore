@@ -13,6 +13,7 @@ import org.example.onlinebookstore.cart.Cart;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name="users")
 public class User {
 
     @Id
@@ -29,7 +30,5 @@ public class User {
     @OneToOne
     @JoinColumn(name="cartid",referencedColumnName = "cartid")
     private Cart cart;
-
-
 
 }

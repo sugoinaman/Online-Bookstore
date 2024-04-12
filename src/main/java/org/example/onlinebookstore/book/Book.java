@@ -1,6 +1,4 @@
 package org.example.onlinebookstore.book;
-
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -13,20 +11,17 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="BOOK")
+@Table(name = "BOOK")
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int bookid;
 
-    @NotBlank(message="Name cannot be empty, gotta have a name")
+    @NotBlank(message = "Name cannot be empty")
     private String name;
 
     private String author;
 
     private int price;
-
-
-
 }

@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookRepository extends CrudRepository<Book, Integer> {
     User findByName(String name);
+
 }

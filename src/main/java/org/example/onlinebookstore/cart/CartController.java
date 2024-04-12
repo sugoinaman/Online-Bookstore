@@ -9,13 +9,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 @RestController
 public class CartController {
 
-    @Autowired
+
     BookRepository bookRepository;
 
-    @Autowired
+
     CartRepository cartRepository;
 
     @PostMapping("/add-to-cart")
@@ -29,9 +32,10 @@ public class CartController {
         Book book = bookRepository.findById(bookid)
                 .orElseThrow(()-> new IllegalArgumentException("Invalid book id"+bookid));
 
-//        Cart cart=cartRepository.findByUserId();
-//        cart.setBooks(new ArrayList<>(Arrays.asList(book)));
-//        cartRepository.save(cart);
+        /*Cart cart=cartRepository.findByUserId();
+        cart.setBooks(new ArrayList<>(Arrays.asList(book)));
+        cartRepository.save(cart);
+         */
 
     }
 }

@@ -23,7 +23,6 @@ public class Cart {
 
     private int totalPrice;
 
-
     //for the user table
     @OneToOne
     @JoinColumn(name = "userid", referencedColumnName = "userid")
@@ -46,7 +45,5 @@ public class Cart {
             inverseJoinColumns = @JoinColumn(name = "bookid")
     )
     private ArrayList<Book> books;
-
-
 
 }
