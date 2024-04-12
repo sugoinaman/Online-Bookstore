@@ -8,27 +8,31 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.onlinebookstore.cart.Cart;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="users")
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer userid;
 
-    @NotBlank(message="name cannot be empty")
+    @NotBlank(message = "name cannot be empty")
     private String name;
 
     private int age;
 
     private String address;
 
+    private Set<Role> roles;
+
     @OneToOne
-    @JoinColumn(name="cartid",referencedColumnName = "cartid")
+    @JoinColumn(name = "cartid", referencedColumnName = "cartid")
     private Cart cart;
 
 }

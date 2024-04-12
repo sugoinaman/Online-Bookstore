@@ -35,7 +35,6 @@ public class Cart {
     an article and comments. one article may have many comments but
     one comment is only for that article, in that case we wont need
     a join table
-
      */
 
     @OneToMany
