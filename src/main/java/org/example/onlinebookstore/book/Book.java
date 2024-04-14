@@ -15,13 +15,13 @@ import lombok.Setter;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int bookid;
+   // @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer bookid;
 
     @NotBlank(message = "Name cannot be empty")
     private String name;
 
     private String author;
 
-    private int price;
+    private Integer price;
 }
