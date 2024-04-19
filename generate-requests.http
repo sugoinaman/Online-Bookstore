@@ -1,0 +1,57 @@
+###
+GET http://localhost:8080/api/books/
+
+###
+POST http://localhost:8080/api/books
+Content-Type:  application/json
+
+{
+  "bookid": 11,
+  "name": "ez pz lemon squeezy",
+  "author": "sugoi",
+  "price": 6969
+}
+###
+GET http://localhost:8080/api/books/11
+
+### Adding more content
+POST http://localhost:8080/api/books
+Content-Type:  application/json
+
+{
+  "bookid": 12,
+  "name": "idk what to put here",
+  "author": "sugoi",
+  "price": 69420
+}
+###
+GET http://localhost:8080/api/books/12
+
+### Put operation
+PUT http://localhost:8080/api/books/12
+Content-Type:  application/json
+
+{
+  "bookid": 12,
+  "name": "Half of a Yellow Sun",
+  "author": "by Chimamanda Ngozi Adichie",
+  "price": 69420
+}
+
+### Delete operation
+DELETE http://localhost:8080/api/books/11
+
+
+### Set index 12 -> 11
+PUT http://localhost:8080/api/books/12
+Content-Type:  application/json
+
+{
+  "bookid": 11,
+  "name": "Half of a Yellow Sun",
+  "author": "by Chimamanda Ngozi Adichie",
+  "price": 69420
+}
+
+
+

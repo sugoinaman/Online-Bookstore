@@ -25,10 +25,12 @@ public class User {
     @NotBlank(message = "name cannot be empty")
     private String name;
 
-    private int age;
+    private Integer age;
 
     private String address;
 
+    @Enumerated(EnumType.STRING)
+    @ElementCollection
     private Set<Role> roles;
 
     @OneToOne
