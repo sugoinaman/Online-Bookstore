@@ -1,5 +1,5 @@
 ###
-GET http://localhost:8080/api/books/
+GET http://localhost:8080/api/books/1
 
 ###
 POST http://localhost:8080/api/books

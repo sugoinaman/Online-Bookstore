@@ -16,6 +16,7 @@ public class BookController {
     }
 
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
     public Book get(@PathVariable Integer id) {
 
@@ -51,3 +52,4 @@ public class BookController {
 
     }
 }
+//TODO: add pagination
