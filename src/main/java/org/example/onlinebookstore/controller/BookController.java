@@ -1,5 +1,7 @@
-package org.example.onlinebookstore.book;
+package org.example.onlinebookstore.controller;
 
+import org.example.onlinebookstore.entity.Book;
+import org.example.onlinebookstore.repository.BookRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;

@@ -1,4 +1,4 @@
-package org.example.onlinebookstore.user;
+package org.example.onlinebookstore.others;
 
 public enum Role {
     USER {

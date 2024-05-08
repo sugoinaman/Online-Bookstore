@@ -1,5 +1,6 @@
-package org.example.onlinebookstore.book;
+package org.example.onlinebookstore.repository;
 
+import org.example.onlinebookstore.entity.Book;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

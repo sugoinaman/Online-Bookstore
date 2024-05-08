@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Book</title>
+</head>
+<body>
+<h1>Add Book</h1>
+<form action="#" th:action="@{/api/addbook}" th:object="${book}" method="post">
+    <p>Name: <input type="text" th:field="*{name}"/></p>
+    <p>Author: <input type="text" th:field="*{author}"/></p>
+    <p>Price: <input type="text" th:field="*{price}"/><p>
+    <!-- Add more fields as necessary -->
+    <p><input type="submit" value="Submit"/></p>
+</form>
+</body>
+</html>

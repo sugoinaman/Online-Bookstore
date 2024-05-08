@@ -1,6 +1,8 @@
-package org.example.onlinebookstore.book;
+package org.example.onlinebookstore.others;
 
 import jakarta.annotation.PostConstruct;
+import org.example.onlinebookstore.entity.Book;
+import org.example.onlinebookstore.repository.BookRepository;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Add books here</title>
+</head>
+<body>
+<form id="user-form"
+      th:object="${book}"
+      th:action="@{/admin-add-users}"
+      method="post">
+
+<div th:text="${book.getName()}">Book Name
+   <div><input id="bookName"
+               type="text"
+               th:field="${book.getName()}"/>
+   </div>
+</div>
+
+<div th:text="${book.getAuthor()}"> Book Author</div>
+<div th:number="${book.getPrice()}">Book Price</div>
+
+</form>
+</body>
+</html>

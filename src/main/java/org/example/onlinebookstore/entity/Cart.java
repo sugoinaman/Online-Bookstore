@@ -1,4 +1,4 @@
-package org.example.onlinebookstore.cart;
+package org.example.onlinebookstore.entity;
 
 
 import jakarta.persistence.*;
@@ -6,8 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.onlinebookstore.book.Book;
-import org.example.onlinebookstore.user.User;
 
 import java.util.ArrayList;
 

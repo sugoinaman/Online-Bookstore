@@ -1,20 +1,18 @@
-package org.example.onlinebookstore.user;
+package org.example.onlinebookstore.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.example.onlinebookstore.cart.Cart;
+import org.example.onlinebookstore.others.Role;
 
 import java.util.Set;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Table(name = "users")
 public class User {
 
@@ -23,18 +21,23 @@ public class User {
     private Integer userid;
 
     @NotBlank(message = "name cannot be empty")
-    private String name;
+    @Column(name = "username", unique = true)
+    private String username;
 
     private Integer age;
 
     private String address;
 
+    private String password;
+
     @Enumerated(EnumType.STRING)
-    @ElementCollection
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     private Set<Role> roles;
 
     @OneToOne
     @JoinColumn(name = "cartid", referencedColumnName = "cartid")
     private Cart cart;
+
 
 }

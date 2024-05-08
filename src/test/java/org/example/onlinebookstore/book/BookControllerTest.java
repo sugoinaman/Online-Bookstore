@@ -1,6 +1,9 @@
 package org.example.onlinebookstore.book;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.onlinebookstore.controller.BookController;
+import org.example.onlinebookstore.entity.Book;
+import org.example.onlinebookstore.repository.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;

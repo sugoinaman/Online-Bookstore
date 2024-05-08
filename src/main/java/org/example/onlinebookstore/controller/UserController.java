@@ -1,11 +1,9 @@
-package org.example.onlinebookstore.user;
+package org.example.onlinebookstore.controller;
 
-import org.example.onlinebookstore.book.BookRepository;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.example.onlinebookstore.repository.BookRepository;
+import org.example.onlinebookstore.repository.UserRepository;
 
-@RestController
-@RequestMapping("/api/books")
+
 public class UserController {
 
 

@@ -1,17 +1,14 @@
-package org.example.onlinebookstore.cart;
+package org.example.onlinebookstore.controller;
 
 
-import org.example.onlinebookstore.book.Book;
-import org.example.onlinebookstore.book.BookRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.example.onlinebookstore.repository.CartRepository;
+import org.example.onlinebookstore.entity.Book;
+import org.example.onlinebookstore.repository.BookRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 @RestController
 @RequestMapping("/api/add-to-cart")

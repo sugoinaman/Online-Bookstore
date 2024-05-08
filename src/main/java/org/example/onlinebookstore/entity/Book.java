@@ -1,4 +1,4 @@
-package org.example.onlinebookstore.book;
+package org.example.onlinebookstore.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
