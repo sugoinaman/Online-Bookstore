@@ -39,7 +39,7 @@ public class AdminController {
     }
 
     @PostMapping("/add/books")
-    public String addBooks(@RequestBody Book book) {
+    public String addBooks(@ModelAttribute Book book) {
         bookService.addBook(book);
         return "redirect:/admin/get/books";
     }

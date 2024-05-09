@@ -10,21 +10,12 @@
     <title>Add books here</title>
 </head>
 <body>
-<form id="user-form"
-      th:object="${book}"
-      th:action="@{/admin-add-users}"
-      method="post">
-
-<div th:text="${book.getName()}">Book Name
-   <div><input id="bookName"
-               type="text"
-               th:field="${book.getName()}"/>
-   </div>
-</div>
-
-<div th:text="${book.getAuthor()}"> Book Author</div>
-<div th:number="${book.getPrice()}">Book Price</div>
-
+<h1>Add Book</h1>
+<form action="#" th:action="@{/admin/add/books}" th:object="${book}" method="post">
+    <p>Book Name: <input type="text" th:field="*{name}"/></p>
+    <p>Author: <input type="text" th:field="*{author}"/></p>
+    <p>Price: <input type="text" th:field="*{price}"/></p>
+    <p><input type="submit" value="Submit"/></p>
 </form>
 </body>
 </html>
