@@ -3,6 +3,7 @@ package org.example.onlinebookstore.controller;
 import org.example.onlinebookstore.constants.PathConstants;
 import org.example.onlinebookstore.entity.Book;
 import org.example.onlinebookstore.entity.User;
+import org.example.onlinebookstore.others.Role;
 import org.example.onlinebookstore.service.impl.BookService;
 import org.example.onlinebookstore.service.impl.UserService;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
 
 @Controller
 @PreAuthorize("hasAuthority('ADMIN')")
@@ -61,10 +64,16 @@ public class AdminController {
     /*
      *this section is for the controls an admin has on user
      */
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @GetMapping("/users")
-    public String showAllUsers(Model model) {
+    @GetMapping("/get/users")
+    public String getUser(Model model) {
         model.addAttribute("users", userService.getAllUsers());
+        return "admin-get-users";
+    }
+
+    @GetMapping("/add/users")
+    public String addUser(Model model) {
+        model.addAttribute("user", new User());
+        model.addAttribute("allRoles", Arrays.asList(Role.values()));
         return "admin-add-users";
     }
 
@@ -72,7 +81,7 @@ public class AdminController {
     @PostMapping("/add-users")
     public String addUser(@RequestBody User user) {
         userService.addUser(user);
-        return "success";
+        return "redirect:/admin/get/users";
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
